@@ -1,0 +1,22 @@
+CREATE TABLE brands(
+	id	 		INT				AUTO_INCREMENT,
+	name		VARCHAR(20)		NOT NULL,
+	PRIMARY KEY(id)
+);
+
+
+CREATE TABLE cars(
+	id	 			INT				NOT NULL AUTO_INCREMENT,
+	model			VARCHAR(30)		NOT NULL,
+	DESCRIPTION		VARCHAR(30)		NOT NULL,
+	price			INT 			NOT NULL,
+	mileage			INT 			NOT NULL,
+	brandId 		INT				NOT NULL,
+	PRIMARY KEY(id)
+);
+
+ALTER TABLE cars ADD FOREIGN KEY (brandId) REFERENCES brands(id);
+
+INSERT INTO brands VALUES(1, 'marca1');
+
+
